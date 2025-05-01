@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Coleção de Livros</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-color);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .contact-info {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .contact-info h2 {
+            margin-top: 0;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .book-card {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .book-image {
+            height: 200px;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .book-info {
+            padding: 1rem;
+        }
+
+        .book-title {
+            margin: 0 0 0.5rem 0;
+            color: var(--dark-color);
+        }
+
+        .book-author {
+            margin: 0 0 1rem 0;
+            color: #666;
+            font-style: italic;
+        }
+
+        .book-description {
+            font-size: 0.9rem;
+        }
+
+        .interested-btn {
+            display: block;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .interested-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .book-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .book-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Minha Coleção de Livros</h1>
+            <p class="subtitle">Uma seleção especial de 51 títulos</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Bem-vindo à minha coleção!</h2>
+            <p>Aqui você encontrará uma cuidadosa seleção de 51 livros que estou disponibilizando para venda. Cada livro foi escolhido com carinho e estão em ótimo estado de conservação.</p>
+            <p>Para saber mais sobre preços ou condições de um título específico, entre em contato através das informações abaixo.</p>
+        </div>
+
+        <div class="contact-info">
+            <h2>Informações de Contato</h2>
+            <p><strong>Nome:</strong> Seu Nome</p>
+            <p><strong>E-mail:</strong> seu.email@exemplo.com</p>
+            <p><strong>Telefone/WhatsApp:</strong> (00) 00000-0000</p>
+        </div>
+
+        <h2>Livros Disponíveis</h2>
+        <div class="book-grid">
+            <!-- Livro 1 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/a-corrosao-do-carater.jpg" alt="Capa do livro A Corrosão do Caráter">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">A Corrosão do Caráter</h3>
+                    <p class="book-author">Richard Sennett</p>
+                    <p class="book-description">Uma análise sobre como o novo capitalismo flexível afeta o caráter pessoal e a vida familiar dos trabalhadores.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: A Corrosão do Caráter" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 2 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/a-ditadura-derrotada.jpg" alt="Capa do livro A Ditadura Derrotada">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">A Ditadura Derrotada</h3>
+                    <p class="book-author">Elio Gaspari</p>
+                    <p class="book-description">Parte da série de Elio Gaspari sobre a ditadura militar brasileira, cobrindo a fase de seu declínio.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: A Ditadura Derrotada" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 3 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/a-ditadura-encurralada.jpg" alt="Capa do livro A Ditadura Encurralada">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">A Ditadura Encurralada</h3>
+                    <p class="book-author">Elio Gaspari</p>
+                    <p class="book-description">Um dos volumes da série sobre a ditadura militar brasileira, focando no período em que o regime começou a perder força.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: A Ditadura Encurralada" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 4 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/a-ditadura-envergonhada.jpg" alt="Capa do livro A Ditadura Envergonhada">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">A Ditadura Envergonhada</h3>
+                    <p class="book-author">Elio Gaspari</p>
+                    <p class="book-description">Volume inicial da série sobre a ditadura militar que analisa o período inicial do regime após o golpe de 1964.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: A Ditadura Envergonhada" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 5 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/a-ditadura-escancarada.jpg" alt="Capa do livro A Ditadura Escancarada">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">A Ditadura Escancarada</h3>
+                    <p class="book-author">Elio Gaspari</p>
+                    <p class="book-description">Parte da série sobre a ditadura militar brasileira que aborda o período mais repressivo do regime, após o AI-5.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: A Ditadura Escancarada" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 6 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/a-etica-protestante.jpg" alt="Capa do livro A Ética Protestante">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">A Ética Protestante e o Espírito do Capitalismo</h3>
+                    <p class="book-author">Max Weber</p>
+                    <p class="book-description">Obra clássica da sociologia que analisa a relação entre a ética protestante e o desenvolvimento do capitalismo no Ocidente.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: A Ética Protestante" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 7 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/a-garota-do-penhasco.jpg" alt="Capa do livro A Garota do Penhasco">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">A Garota do Penhasco</h3>
+                    <p class="book-author">Lucinda Riley</p>
+                    <p class="book-description">Romance que mistura mistério e drama, ambientado em um penhasco na costa inglesa.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: A Garota do Penhasco" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 8 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/a-grande-transformacao.jpg" alt="Capa do livro A Grande Transformação">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">A Grande Transformação</h3>
+                    <p class="book-author">Karl Polanyi</p>
+                    <p class="book-description">Análise histórica e econômica sobre as origens políticas e econômicas do nosso tempo e a formação da economia de mercado.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: A Grande Transformação" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 9 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/a-lei-dos-povos.jpg" alt="Capa do livro A Lei dos Povos">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">A Lei dos Povos</h3>
+                    <p class="book-author">John Rawls</p>
+                    <p class="book-description">Obra de filosofia política onde Rawls estende sua teoria da justiça para abordar questões de direito internacional.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: A Lei dos Povos" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 10 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/a-subsistencia-do-homem.jpg" alt="Capa do livro A Subsistência do Homem">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">A Subsistência do Homem</h3>
+                    <p class="book-author">Karl Polanyi</p>
+                    <p class="book-description">Uma análise antropológica e histórica sobre como as sociedades organizaram suas economias ao longo do tempo.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: A Subsistência do Homem" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 11 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/a-utopia-do-brasil.jpg" alt="Capa do livro A Utopia do Brasil">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">A Utopia do Brasil</h3>
+                    <p class="book-author">Jorge Caldeira</p>
+                    <p class="book-description">Uma análise sobre a formação social e econômica do Brasil e os sonhos de desenvolvimento nacional.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: A Utopia do Brasil" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 12 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/american-theocracy.jpg" alt="Capa do livro American Theocracy">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">American Theocracy</h3>
+                    <p class="book-author">Kevin Phillips</p>
+                    <p class="book-description">Uma análise da influência do fundamentalismo religioso, do petróleo e do débito financeiro na política americana.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: American Theocracy" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 13 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/anti-fragil.jpg" alt="Capa do livro Antifrágil">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Antifrágil</h3>
+                    <p class="book-author">Nassim Nicholas Taleb</p>
+                    <p class="book-description">Uma análise sobre sistemas que se beneficiam da volatilidade, do caos e da desordem, tornando-se mais fortes com o stress.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: Antifrágil" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 14 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/antropologia.jpg" alt="Capa do livro Antropologia">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Antropologia</h3>
+                    <p class="book-author">Vários Autores</p>
+                    <p class="book-description">Introdução aos conceitos e teorias fundamentais da antropologia social e cultural.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: Antropologia" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 15 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/bens-publicos-globais.jpg" alt="Capa do livro Bens Públicos Globais">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Bens Públicos Globais</h3>
+                    <p class="book-author">Inge Kaul et al.</p>
+                    <p class="book-description">Uma análise sobre cooperação internacional no século XXI e a gestão de recursos que beneficiam toda a humanidade.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: Bens Públicos Globais" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 16 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/china-socialismo-seculo-xxi.jpg" alt="Capa do livro China - O Socialismo do Século XXI">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">China - O Socialismo do Século XXI</h3>
+                    <p class="book-author">Elias Jabbour</p>
+                    <p class="book-description">Análise do modelo econômico e político chinês contemporâneo e suas particularidades.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: China - O Socialismo do Século XXI" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 17 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/crescer-com-estabilidade.jpg" alt="Capa do livro Crescer com Estabilidade">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Crescer com Estabilidade</h3>
+                    <p class="book-author">Vários Autores</p>
+                    <p class="book-description">Uma análise sobre os desafios do crescimento econômico sustentável com estabilidade macroeconômica.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: Crescer com Estabilidade" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 18 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/cristianismo-e-politica.jpg" alt="Capa do livro Cristianismo e Política">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Cristianismo e Política</h3>
+                    <p class="book-author">Vários Autores</p>
+                    <p class="book-description">Uma análise das relações entre fé cristã e atuação política ao longo da história.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: Cristianismo e Política" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 19 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/detente-and-nixon-doctrine.jpg" alt="Capa do livro Detente and the Nixon Doctrine">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Detente and the Nixon Doctrine</h3>
+                    <p class="book-author">Robert S. Litwak</p>
+                    <p class="book-description">Análise da política externa americana durante o governo Nixon e o período de distensão da Guerra Fria.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: Detente and the Nixon Doctrine" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 20 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/discursos-historicos.jpg" alt="Capa do livro Discursos Históricos">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Discursos Históricos</h3>
+                    <p class="book-author">Vários Oradores</p>
+                    <p class="book-description">Coletânea de importantes discursos que marcaram a história mundial.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: Discursos Históricos" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 21 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/ditadura-e-democracia.jpg" alt="Capa do livro Ditadura e Democracia">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Ditadura e Democracia</h3>
+                    <p class="book-author">Vários Autores</p>
+                    <p class="book-description">Análise comparativa entre regimes ditatoriais e democráticos, com foco na transição brasileira.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: Ditadura e Democracia" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 22 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/economia-brasileira.jpg" alt="Capa do livro Economia Brasileira">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Economia Brasileira</h3>
+                    <p class="book-author">Vários Autores</p>
+                    <p class="book-description">Panorama abrangente da formação e desenvolvimento da economia brasileira.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: Economia Brasileira" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 23 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/era-dos-extremos.jpg" alt="Capa do livro Era dos Extremos">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Era dos Extremos: O Breve Século XX</h3>
+                    <p class="book-author">Eric Hobsbawm</p>
+                    <p class="book-description">Análise histórica do período entre 1914 e 1991, mostrando as transformações políticas, econômicas e sociais que marcaram o século XX.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: Era dos Extremos" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 24 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/espirito-santo.jpg" alt="Capa do livro Espírito Santo">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Espírito Santo</h3>
+                    <p class="book-author">Soares, Lemos e Miranda</p>
+                    <p class="book-description">Estudo teológico sobre a pessoa e a obra do Espírito Santo na teologia cristã.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: Espírito Santo" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 25 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/estrategia-competitiva.jpg" alt="Capa do livro Estratégia Competitiva">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Estratégia Competitiva</h3>
+                    <p class="book-author">Michael Porter</p>
+                    <p class="book-description">Técnicas para análise de indústrias e concorrentes, obra fundamental da estratégia empresarial moderna.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: Estratégia Competitiva" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 26 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/familia-afeto-financas.jpg" alt="Capa do livro Família, Afeto e Finanças">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Família, Afeto e Finanças</h3>
+                    <p class="book-author">Vários Autores</p>
+                    <p class="book-description">Guia sobre como administrar as finanças familiares mantendo relações saudáveis no lar.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: Família, Afeto e Finanças" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 27 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/historia-da-riqueza-do-homem.jpg" alt="Capa do livro História da Riqueza do Homem">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">História da Riqueza do Homem</h3>
+                    <p class="book-author">Leo Huberman</p>
+                    <p class="book-description">Uma introdução à história econômica da humanidade, desde a Idade Média até o século XX.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: História da Riqueza do Homem" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 28 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/holy-bible.jpg" alt="Capa do livro Holy Bible">
+                </div>
+                <div class="book-info">
+                    <h3 class="book-title">Holy Bible</h3>
+                    <p class="book-author">Versão em inglês</p>
+                    <p class="book-description">Versão em inglês da Bíblia Sagrada, livro sagrado do cristianismo.</p>
+                    <a href="mailto:seu.email@exemplo.com?subject=Interesse no livro: Holy Bible" class="interested-btn">Tenho interesse</a>
+                </div>
+            </div>
+
+            <!-- Livro 29 -->
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="images/ilicito
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Minha Coleção de Livros. Todos os direitos reservados.</p>
+            <p>Este site foi criado para facilitar a venda de uma coleção pessoal de livros.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Poderíamos adicionar funcionalidades extras aqui como:
+        // - Filtragem de livros por categoria
+        // - Sistema de busca
+        // - Formulário de contato
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Exemplo de função para mostrar uma mensagem quando o usuário clica em "Tenho interesse"
+            const interestButtons = document.querySelectorAll('.interested-btn');
+            interestButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Mensagem enviada! Entraremos em contato em breve.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
